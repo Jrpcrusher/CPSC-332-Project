@@ -2,7 +2,6 @@
 <body>
 <?php>
 
-/*
 $link = mysqli_connect('mariadb', 'cs332t29', 'y5pD4Xwt', 'cs332t29');
 if (!$link) {
         die('Could not connect: '.mysql_error());
@@ -23,8 +22,6 @@ for($i=0; $i<$nor, $i++)
 $result->free_result();
 $link->close();
 ?>
-
-*/
 
 </body>
 </html>
