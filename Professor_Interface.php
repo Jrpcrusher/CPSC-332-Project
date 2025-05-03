@@ -10,7 +10,6 @@ echo 'Connected successfully<p>';
 
 $result = $link->query("SELECT * FROM STUDENT");
 $nor=$result->num_rows;
-
 for($i=0; $i<$nor, $i++)
 {
         $row=$result->fetch_assoc();
