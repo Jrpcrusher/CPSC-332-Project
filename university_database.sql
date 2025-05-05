@@ -39,19 +39,19 @@ CREATE DATABASE UNIVERSITY_DATABASE;
 
        CREATE TABLE SECTION (
            SNO numeric(6) not null,
+           CNUM numeric(6),
            CLASSROOM varchar(20),
            NO_OF_SEATS varchar(20),
            MEETING_DAYS varchar(20),
            START_TIME varchar(20),
            END_TIME varchar(20),
            PSSN varchar(20) references PROFESSOR(SSN),
-           CNUM varchar(20),
            primary key (CNUM, SNO),
            foreign key (CNUM) references COURSE(CNO));
 
        CREATE TABLE PREREQUISITES (
-           CNUM numeric(7),
-           PRENUM char(6),
+           CNUM numeric(6),
+           PRENUM numeric(6),
            primary key (CNUM, PRENUM),
            foreign key (CNUM) references COURSE(CNO),
            foreign key (PRENUM) references COURSE(CNO));
