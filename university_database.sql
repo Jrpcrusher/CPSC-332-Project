@@ -21,24 +21,21 @@ CREATE DATABASE UNIVERSITY_DATABASE;
            Last_Name VARCHAR(50),
            Telephone_Number VARCHAR(10),
            Address VARCHAR(15),
-           DNUM varchar(20),
-           FOREIGN KEY(DNUM) REFERENCES Department(DNO));
+           DNUM numeric(10) references DEPARTMENT(DNO));
 
        CREATE TABLE DEPARTMENT(
            DNO numeric(10) primary key,
            DNAME varchar(20),
            DPHONE varchar(10),
            OFFICE_LOCATION varchar(20),
-           CHAIR_SSN varchar(9),
-           foreign key (CHAIR_SSN) references PROFESSOR(SSN));
+           CHAIR_SSN varchar(10) references PROFESSOR(SSN));
 
        CREATE TABLE COURSE (
            CNO numeric(6) primary key,
-           TITLE VARCHAR(20),
-           TEXTBOOK VARCHAR(20),
-           UNITS INT,
-           DNUM INT,
-           FOREIGN KEY (DNUM) REFERENCES DEPARTMENT(DNO));
+           TITLE varchar(20),
+           TEXTBOOK varchar(20),
+           UNITS int,
+           DNUM int references DEPARTMENT(DNO));
 
        CREATE TABLE SECTION (
            SNO numeric(6) primary key,
