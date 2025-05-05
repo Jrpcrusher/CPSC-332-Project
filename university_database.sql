@@ -44,10 +44,9 @@ CREATE DATABASE UNIVERSITY_DATABASE;
            MEETING_DAYS varchar(20),
            START_TIME varchar(20),
            END_TIME varchar(20),
-           PSSN varchar(20),
+           PSSN varchar(20) references PROFESSOR(SSN),
            CNUM varchar(20),
            primary key (CNUM, SNO),
-           foreign key (PSSN) references PROFESSOR(SSN),
            foreign key (CNUM) references COURSE(CNO));
 
        CREATE TABLE PREREQUISITES (
