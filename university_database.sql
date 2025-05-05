@@ -17,10 +17,10 @@ CREATE DATABASE UNIVERSITY_DATABASE;
 
        CREATE TABLE STUDENT(
            CWID numeric(8) primary key,
-           First_Name VARCHAR(50),
-           Last_Name VARCHAR(50),
-           Telephone_Number VARCHAR(10),
-           Address VARCHAR(15),
+           First_Name varchar(50),
+           Last_Name varchar(50),
+           Telephone_Number varchar(10),
+           Address varchar(15),
            DNUM numeric(10) references DEPARTMENT(DNO));
 
        CREATE TABLE DEPARTMENT(
@@ -38,7 +38,7 @@ CREATE DATABASE UNIVERSITY_DATABASE;
            DNUM int references DEPARTMENT(DNO));
 
        CREATE TABLE SECTION (
-           SNO numeric(6) primary key,
+           SNO numeric(6) not null,
            CLASSROOM varchar(20),
            NO_OF_SEATS varchar(20),
            MEETING_DAYS varchar(20),
@@ -46,39 +46,40 @@ CREATE DATABASE UNIVERSITY_DATABASE;
            END_TIME varchar(20),
            PSSN varchar(20),
            CNUM varchar(20),
-           FOREIGN KEY (PSSN) REFERENCES PROFESSOR(SSN),
-           FOREIGN KEY (CNUM) REFERENCES COURSE(CNO));
+           primary key (CNUM, SNO),
+           foreign key (PSSN) references PROFESSOR(SSN),
+           foreign key (CNUM) references COURSE(CNO));
 
        CREATE TABLE PREREQUISITES (
            CNUM numeric(7),
-           PRENUM CHAR(6),
+           PRENUM char(6),
            primary key (CNUM, PRENUM),
-           FOREIGN KEY (CNUM) REFERENCES COURSE(CNO),
-           FOREIGN KEY (PRENUM) REFERENCES COURSE(CNO));
+           foreign key (CNUM) references COURSE(CNO),
+           foreign key (PRENUM) references COURSE(CNO));
 
        CREATE TABLE MINOR(
            CWID numeric(8) NOT NULL,
            DNO INT NOT NULL,
-           PRIMARY KEY(CWID, DNO),
-           FOREIGN KEY(CWID) REFERENCES STUDENT(CWID),
-           FOREIGN KEY(CWID) REFERENCES DEPARTMENT(DNO));
+           primary key (CWID, DNO),
+           foreign key(CWID) references STUDENT(CWID),
+           foreign key(CWID) references DEPARTMENT(DNO));
 
 
        CREATE TABLE COLLEGE_DEGREES(
            COLLEGE_DEGREES varchar(50),
            SSN varchar(9),
-           PRIMARY KEY(COLLEGE_DEGREES),
-           FOREIGN KEY(SSN) REFERENCES PROFESSOR(SSN));
+           primary key (COLLEGE_DEGREES),
+           foreign key(SSN) references PROFESSOR(SSN));
 
        CREATE TABLE ENROLLMENT(
-           CWID VARCHAR(8) NOT NULL,
-           CNO VARCHAR(20) NOT NULL,
-           SECTION_NUMBER VARCHAR(5) NOT NULL,
+           CWID varchar(8) NOT NULL,
+           CNO varchar(20) NOT NULL,
+           SECTION_NUMBER varchar(5) NOT NULL,
            GRADE enum('A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'),
-           PRIMARY KEY(CWID, CNO,SECTION_NUMBER),
-           FOREIGN KEY(CWID) REFERENCES STUDENT(CWID),
-           FOREIGN KEY(SECTION_NUMBER) REFERENCES SECTION(SNO),
-           FOREIGN KEY (CNO) REFERENCES COURSE(CNO));
+           primary key(CWID, CNO,SECTION_NUMBER),
+           foreign key(CWID) references STUDENT(CWID),
+           foreign key(SECTION_NUMBER) references SECTION(SNO),
+           foreign key (CNO) references COURSE(CNO));
 
 INSERT INTO STUDENT(CWID, First_name, Last_name, Telephone_Number, Address, DNUM) VALUES
 (10001234, 'Alice', 'Nguyen', '555-123-4567', '123 Maple St, Springfield', 111),
