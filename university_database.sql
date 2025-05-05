@@ -81,14 +81,14 @@ CREATE DATABASE UNIVERSITY_DATABASE;
 
 
 INSERT INTO STUDENT(CWID, First_name, Last_name, Telephone_Number, Address, DNUM) VALUES
-(10001234, 'Alice', 'Nguyen', '555-123-4567', '123 Maple St, Springfield', 111),
-(10005678, 'Brian', 'Choi', '555-987-6543', '456 Oak Ave, Lincoln', 222),
-(10009876, 'Clara', 'Martinez', '555-555-1122', '789 Pine Dr, Fairview', 111),
-(10004321, 'David', 'Johnson', '555-333-2211', '101 Elm St, Riverdale', 222),
-(10007654, 'Elena', 'Lee', '555-999-8888', '202 Birch Rd, Centerville', 111),
-(10006543, 'Felix', 'Wong', '555-777-6666', '303 Cedar Ln, Brookfield', 222),
-(10008765, 'Grace', 'Patel', '555-444-3333', '404 Spruce Ct, Franklin', 111),
-(10003456, 'Hannah', 'Kim', '555-222-1111', '505 Willow Blvd, Greenville', 222);
+(10001234, 'Alice', 'Nguyen', '5551234567', '123 Maple St, Springfield', 111),
+(10005678, 'Brian', 'Choi', '5559876543', '456 Oak Ave, Lincoln', 222),
+(10009876, 'Clara', 'Martinez', '5555551122', '789 Pine Dr, Fairview', 111),
+(10004321, 'David', 'Johnson', '5553332211', '101 Elm St, Riverdale', 222),
+(10007654, 'Elena', 'Lee', '5559998888', '202 Birch Rd, Centerville', 111),
+(10006543, 'Felix', 'Wong', '5557776666', '303 Cedar Ln, Brookfield', 222),
+(10008765, 'Grace', 'Patel', '5554443333', '404 Spruce Ct, Franklin', 111),
+(10003456, 'Hannah', 'Kim', '5552221111', '505 Willow Blvd, Greenville', 222);
 
 INSERT INTO PROFESSOR(SSN, NAME, STREET_ADDRESS, CITY, STATE, ZIP_CODE, SEX, AREA_CODE, PHONE_NUMBER, TITLE, SALARY, COLLEGE_DEGREES) VALUES
 ('123456789', 'Linda Chen', '12 University Way', 'Boston', 'MA', '02115', 'F', '617', '5551234', 'Associate Professor', 85000, 'PhD, M.S.'),
