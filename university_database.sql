@@ -71,14 +71,14 @@ CREATE DATABASE UNIVERSITY_DATABASE;
            foreign key(PSSN) references PROFESSOR(SSN));
 
        CREATE TABLE ENROLLMENT(
-           CWID numeric(8) NOT NULL,
-           CNO numeric(6) NOT NULL,
-           SECTION_NUMBER numeric(6) NOT NULL,
+           CWID numeric(8) not null,
+           SECTION_NUMBER numeric(6) not null,
+           CNO numeric(6) not null,
            GRADE enum('A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'),
            primary key(CWID, CNO, SECTION_NUMBER),
            foreign key(CWID) references STUDENT(CWID),
-           foreign key(SECTION_NUMBER) references SECTION(SNO),
-           foreign key (CNO) references COURSE(CNO));
+           foreign key (CNO, SECTION_NUMBER) references SECTION(CNUM, SNO));
+
 
 INSERT INTO STUDENT(CWID, First_name, Last_name, Telephone_Number, Address, DNUM) VALUES
 (10001234, 'Alice', 'Nguyen', '555-123-4567', '123 Maple St, Springfield', 111),
@@ -113,7 +113,7 @@ INSERT INTO SECTION(SNO, CLASSROOM, NO_OF_SEATS, MEETING_DAYS, START_TIME, END_T
 (5, 'Room 103', 25, 'MWF', '14:00', '15:00', '123456789', 101),
 (6, 'Room 104', 30, 'TTh', '15:30', '17:00', '987654321', 102);
 
-INSERT INTO ENROLLMENT(CWID, CNO, SECTION_NUMBER, GRADE) VALUES
+INSERT INTO ENROLLMENT(S_CWID, CNUM, SECTION_NUMBER, GRADE) VALUES
 (10001234, 101, 1, 'A+'),
 (10005678, 102, 2, 'B'),
 (10009876, 201, 3, 'A-'),
