@@ -66,16 +66,16 @@ CREATE DATABASE UNIVERSITY_DATABASE;
 
        CREATE TABLE COLLEGE_DEGREES(
            COLLEGE_DEGREES varchar(50),
-           SSN varchar(9),
-           primary key (SSN, COLLEGE_DEGREES),
-           foreign key(SSN) references PROFESSOR(SSN));
+           PSSN numeric(9),
+           primary key (PSSN, COLLEGE_DEGREES),
+           foreign key(PSSN) references PROFESSOR(SSN));
 
        CREATE TABLE ENROLLMENT(
-           CWID varchar(8) NOT NULL,
-           CNO varchar(20) NOT NULL,
-           SECTION_NUMBER varchar(5) NOT NULL,
+           CWID numeric(8) NOT NULL,
+           CNO numeric(6) NOT NULL,
+           SECTION_NUMBER numeric(6) NOT NULL,
            GRADE enum('A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'),
-           primary key(CWID, CNO,SECTION_NUMBER),
+           primary key(CWID, CNO, SECTION_NUMBER),
            foreign key(CWID) references STUDENT(CWID),
            foreign key(SECTION_NUMBER) references SECTION(SNO),
            foreign key (CNO) references COURSE(CNO));
