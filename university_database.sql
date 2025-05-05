@@ -58,10 +58,10 @@ CREATE DATABASE UNIVERSITY_DATABASE;
 
        CREATE TABLE MINOR(
            CWID numeric(8) NOT NULL,
-           DNO INT NOT NULL,
-           primary key (CWID, DNO),
-           foreign key(CWID) references STUDENT(CWID),
-           foreign key(CWID) references DEPARTMENT(DNO));
+           DNUM INT NOT NULL,
+           primary key (CWID, DNUM),
+           foreign key (CWID) references STUDENT(CWID),
+           foreign key (DNUM) references DEPARTMENT(DNO));
 
 
        CREATE TABLE COLLEGE_DEGREES(
