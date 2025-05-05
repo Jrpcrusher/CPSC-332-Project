@@ -58,7 +58,7 @@ CREATE DATABASE UNIVERSITY_DATABASE;
 
        CREATE TABLE MINOR(
            CWID numeric(8) NOT NULL,
-           DNUM INT NOT NULL,
+           DNUM numeric(10) NOT NULL,
            primary key (CWID, DNUM),
            foreign key (CWID) references STUDENT(CWID),
            foreign key (DNUM) references DEPARTMENT(DNO));
@@ -67,7 +67,7 @@ CREATE DATABASE UNIVERSITY_DATABASE;
        CREATE TABLE COLLEGE_DEGREES(
            COLLEGE_DEGREES varchar(50),
            SSN varchar(9),
-           primary key (COLLEGE_DEGREES),
+           primary key (SSN, COLLEGE_DEGREES),
            foreign key(SSN) references PROFESSOR(SSN));
 
        CREATE TABLE ENROLLMENT(
