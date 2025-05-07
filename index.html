@@ -1,35 +1,44 @@
 <html>
 <body>
 
-<h1>
-University Database System
-</h1>
+<h1>University Database System</h1>
 
-<!--
-<form action = "ProfessorInterface.php" method="POST">
-(For Professors) Enter your SSN: <input type="text" name = "sno"/>
-<input type ="submit"/>
-</form>
--->
+<br>
+<h2>For Professors Only</h2>
 
-<form action = "Professor_Interface.php" method="POST">
-(For Professors) Enter your SSN: <input type="text" name = "sno"/>
-<input type="submit"/>
+<h3>Lookup Classes by SSN</h3>
+<form action="ProfessorInterfaceA.php" method="POST">
+    <label for="ssn">Enter your SSN:</label>
+    <input type="text" id="ssn" name="ssn" required>
+    <input type="submit" value="Lookup">
 </form>
 
-<form action="Professor_Interface.php" method="POST">
-(For Professors) Enter Course Number & Section Number: <input type ="text" name = "sno"/>
-<input type="submit"/>
+<h3>Find Grade Breakdown by Course & Section</h3>
+<form action="ProfessorInterfaceB.php" method="POST">
+    <label for="course_no">Course Number:</label>
+    <input type="text" id="course_no" name="course_no" required><br><br>
+
+    <label for="section_no">Section Number:</label>
+    <input type="text" id="section_no" name="section_no" required><br><br>
+
+    <input type="submit" value="Submit">
 </form>
 
-<form action="Student_Interface.php" method="POST">
-(For Students) Enter Course Number: <input type="text" name="sno"/>
-<input type="submit"/>
+<br>
+<h2>For Students Only</h2>
+
+<h3>Find Course Sections</h3>
+<form action="StudentInterfaceA.php" method="POST">
+    <label for="course_no">Enter Course Number:</label>
+    <input type="number" id="course_no" name="course_no" required>
+    <input type="submit" value="Search">
 </form>
 
-<form action="Student_Interface.php" method="POST">
-(For Students) Enter your CWID: <input type="text" name="sno"/>
-<input type="submit"/>
+<h3>View Your Grades</h3>
+<form action="StudentInterfaceB.php" method="POST">
+    <label for="cwid">Enter CWID:</label>
+    <input type="number" id="cwid" name="cwid" required>
+    <input type="submit" value="Lookup">
 </form>
 
 </body>
