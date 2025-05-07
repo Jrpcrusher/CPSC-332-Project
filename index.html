@@ -1,45 +1,116 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>University Database System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #2980b9;
+        }
+
+        .section {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        form {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
 <body>
 
 <h1>University Database System</h1>
 
-<br>
-<h2>For Professors Only</h2>
+<div class="section">
+    <h2>For Professors Only</h2>
 
-<h3>Lookup Classes by SSN</h3>
-<form action="ProfessorInterfaceA.php" method="POST">
-    <label for="ssn">Enter your SSN:</label>
-    <input type="text" id="ssn" name="ssn" required>
-    <input type="submit" value="Lookup">
-</form>
+    <h3>Lookup Classes by SSN</h3>
+    <form action="ProfessorInterfaceA.php" method="POST">
+        <label for="ssn">Enter your SSN:</label>
+        <input type="text" id="ssn" name="ssn" required>
+        <input type="submit" value="Lookup">
+    </form>
 
-<h3>Find Grade Breakdown by Course & Section</h3>
-<form action="ProfessorInterfaceB.php" method="POST">
-    <label for="course_no">Course Number:</label>
-    <input type="text" id="course_no" name="course_no" required><br><br>
+    <h3>Find Grade Breakdown by Course & Section</h3>
+    <form action="ProfessorInterfaceB.php" method="POST">
+        <label for="course_no">Course Number:</label>
+        <input type="text" id="course_no" name="course_no" required>
 
-    <label for="section_no">Section Number:</label>
-    <input type="text" id="section_no" name="section_no" required><br><br>
+        <label for="section_no">Section Number:</label>
+        <input type="text" id="section_no" name="section_no" required>
 
-    <input type="submit" value="Submit">
-</form>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
-<br>
-<h2>For Students Only</h2>
+<div class="section">
+    <h2>For Students Only</h2>
 
-<h3>Find Course Sections</h3>
-<form action="StudentInterfaceA.php" method="POST">
-    <label for="course_no">Enter Course Number:</label>
-    <input type="number" id="course_no" name="course_no" required>
-    <input type="submit" value="Search">
-</form>
+    <h3>Find Course Sections</h3>
+    <form action="StudentInterfaceA.php" method="POST">
+        <label for="course_no">Enter Course Number:</label>
+        <input type="number" id="course_no" name="course_no" required>
+        <input type="submit" value="Search">
+    </form>
 
-<h3>View Your Grades</h3>
-<form action="StudentInterfaceB.php" method="POST">
-    <label for="cwid">Enter CWID:</label>
-    <input type="number" id="cwid" name="cwid" required>
-    <input type="submit" value="Lookup">
-</form>
+    <h3>View Your Grades</h3>
+    <form action="StudentInterfaceB.php" method="POST">
+        <label for="cwid">Enter CWID:</label>
+        <input type="number" id="cwid" name="cwid" required>
+        <input type="submit" value="Lookup">
+    </form>
+</div>
 
 </body>
 </html>
